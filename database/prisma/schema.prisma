@@ -1,0 +1,93 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  status    Status   @default(ACTIVE)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Sponsor {
+  id           String     @id @default(uuid())
+  name         String
+  email        String     @unique
+  website      String
+  logo         String
+  type         SponsorType
+  status       Status
+  budget       Float
+  spentBudget  Float      @default(0)
+  contactPerson String
+  contactPhone String
+  notes        String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  campaigns    Campaign[]
+
+  @@map("sponsors")
+}
+
+model Campaign {
+  id             String         @id @default(uuid())
+  name           String
+  description    String
+  sponsor        Sponsor        @relation(fields: [sponsorId], references: [id])
+  sponsorId      String
+  type           CampaignType
+  status         CampaignStatus
+  budget         Float
+  spentBudget    Float          @default(0)
+  startDate      DateTime
+  endDate        DateTime
+  targetAudience String[]
+  promoCode      String?
+  metrics        Json
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@map("campaigns")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum Status {
+  ACTIVE
+  PENDING
+  INACTIVE
+}
+
+enum SponsorType {
+  PREMIUM
+  STANDARD
+  BASIC
+}
+
+enum CampaignType {
+  BANNER
+  FEATURED
+  POPUP
+  EMAIL
+}
+
+enum CampaignStatus {
+  ACTIVE
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+} 
