@@ -1,33 +1,30 @@
 {
   "name": "nameker",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "admin-panel",
-    "admin-api",
-    "miniapp",
-    "database",
-    "shared"
+    "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "node packages/admin-api/dist/index.js",
     "lint": "turbo run lint",
-    "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "admin:dev": "yarn workspace @nameker/admin-panel dev",
-    "api:dev": "yarn workspace @nameker/admin-api dev",
-    "miniapp:dev": "yarn workspace @nameker/miniapp dev",
-    "db:generate": "yarn workspace @nameker/database db:generate",
-    "db:push": "yarn workspace @nameker/database db:push",
-    "db:studio": "yarn workspace @nameker/database db:studio",
-    "start": "yarn api:dev"
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
-    "prettier": "^3.0.0",
-    "turbo": "^1.10.12",
-    "@changesets/cli": "^2.26.2",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.2"
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "turbo": "^1.10.0",
+    "typescript": "^5.0.0"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "npm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
 }
