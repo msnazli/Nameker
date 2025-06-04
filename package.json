@@ -1,0 +1,52 @@
+{
+  "name": "nameker",
+  "version": "1.0.0",
+  "description": "Professional name generator Telegram MiniApp with admin panel",
+  "main": "src/backend/server.js",
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "dev": "nodemon src/backend/server.js",
+    "build": "cd src/miniapp && npm install && npm run build",
+    "postinstall": "npm run build",
+    "client": "cd src/miniapp && npm start",
+    "admin": "cd src/admin && npm start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-data-grid": "^8.5.0",
+    "@tanstack/react-query": "^5.79.0",
+    "axios": "^1.9.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "https-proxy-agent": "^7.0.6",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "openai": "^4.104.0",
+    "rate-limiter-flexible": "^3.0.4",
+    "react-router-dom": "^7.6.1",
+    "recharts": "^2.15.3",
+    "socks-proxy-agent": "^8.0.5",
+    "telegraf": "^4.15.3",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.1.1",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

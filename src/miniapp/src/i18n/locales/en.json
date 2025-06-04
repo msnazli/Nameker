@@ -1,0 +1,93 @@
+{
+  "appName": "Nameker",
+  "login": "Login with Telegram",
+  "generator": "Generator",
+  "history": "History",
+  "settings": "Settings",
+  "credits": "Credits",
+  "generate": "Generate Name",
+  "purchase": "Purchase Credits",
+  
+  "home": {
+    "title": "Professional Name Generator",
+    "subtitle": "Create unique and memorable names powered by AI",
+    "features": {
+      "title": "Features",
+      "ai": "AI-Powered Generation",
+      "multilingual": "Multilingual Support",
+      "professional": "Professional Results",
+      "fast": "Fast & Efficient"
+    }
+  },
+
+  "generator": {
+    "title": "Name Generator",
+    "form": {
+      "topic": "Topic or Industry",
+      "topicPlaceholder": "Enter the topic or industry",
+      "description": "Job Description",
+      "descriptionPlaceholder": "Describe what the name is for",
+      "keywords": "Keywords",
+      "keywordsPlaceholder": "Enter keywords (optional)",
+      "features": "Features",
+      "styles": "Styles"
+    },
+    "result": {
+      "title": "Generated Name",
+      "description": "Description",
+      "explanation": "Why it works"
+    }
+  },
+
+  "history": {
+    "title": "Generation History",
+    "empty": "No names generated yet",
+    "filters": {
+      "all": "All",
+      "favorites": "Favorites",
+      "category": "Category"
+    }
+  },
+
+  "payment": {
+    "title": "Purchase Credits",
+    "packages": {
+      "basic": {
+        "title": "Basic",
+        "description": "Perfect for getting started"
+      },
+      "pro": {
+        "title": "Pro",
+        "description": "For professional use"
+      }
+    },
+    "methods": {
+      "zarinpal": "Pay with Zarinpal",
+      "ton": "Pay with TON"
+    }
+  },
+
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": {
+      "title": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "notifications": "Enable Notifications"
+  },
+
+  "footer": {
+    "copyright": "© {{year}} Nameker. All rights reserved."
+  },
+
+  "errors": {
+    "generic": "An error occurred",
+    "auth": "Authentication failed",
+    "credits": "Insufficient credits",
+    "payment": "Payment failed",
+    "generation": "Name generation failed"
+  }
+} 
