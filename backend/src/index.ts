@@ -16,7 +16,8 @@ const port = process.env.PORT || 3000;
 connectToDatabase().catch(console.error);
 
 // Middleware
-app.use(cors());
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 
 // Health check endpoint

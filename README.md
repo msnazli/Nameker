@@ -1,199 +1,153 @@
-# Nameker - Telegram Mini App
+# Nameker Project
 
-A powerful name generation platform built as a Telegram Mini App using modern web technologies and a monorepo architecture.
+## Project Overview
+Nameker is a web application consisting of three main components:
+- **Backend**: A Node.js + Express server for handling API requests.
+- **Admin Panel**: A React-based admin panel for managing the application.
+- **Mini App**: A Telegram Mini App built with Vite and React.
 
-## 🌟 Overview
-
-Nameker is a sophisticated name generation platform that helps users create unique and meaningful names based on various parameters such as topic, description, language, and style preferences. The platform is integrated with Telegram's Mini App ecosystem and offers a seamless user experience with features like payment integration, multilingual support, and theme customization.
-
-## 🏗️ Project Structure
-
-The project follows a monorepo architecture using Turborepo for efficient workspace management:
-
+## Project Structure
 ```
-nameker/
-├── packages/
-│   ├── admin-panel/     # Admin dashboard for managing the platform
-│   ├── admin-api/       # Backend API for admin operations
-│   ├── miniapp/         # Telegram Mini App frontend
-│   ├── database/        # Shared database schemas and migrations
-│   └── shared/          # Shared utilities and types
-└── package.json         # Root workspace configuration
+Nameker/
+│
+├── backend/          # Node.js + Express server
+├── admin/            # React-based admin panel
+├── miniapp/          # Telegram Mini App (Vite + React)
+└── database/         # Models, seeders, or Mongo configs
 ```
 
-### Key Components
-
-#### 1. Mini App (packages/miniapp)
-- **Core Features**:
-  - Name generation with customizable parameters
-  - History tracking of generated names
-  - User preferences management
-  - Payment integration (TON & Zarinpal)
-  - Responsive design
-  - Dark/Light theme support
-  - Multilingual support (English & Persian)
-
-- **Key Pages**:
-  - Home: Landing page with feature showcase
-  - Generator: Name generation interface
-  - History: Past generations list with filters
-  - Settings: User preferences
-  - Payment: Credit package selection
-
-#### 2. Admin Panel (packages/admin-panel)
-- Dashboard for platform management
-- User management
-- Generation statistics
-- Payment tracking
-- Content moderation
-
-#### 3. Backend Services
-- **Admin API**: RESTful endpoints for admin operations
-- **Database**: Prisma-based data management
-- **Shared**: Common utilities and type definitions
-
-## 🚀 Technology Stack
-
-### Frontend (Mini App & Admin Panel)
-- React with TypeScript
-- Vite for build tooling
-- TailwindCSS for styling
-- i18next for internationalization
-- Telegram Web App SDK
-- React Query for data fetching
-- Zustand for state management
-
-### Backend
-- Node.js with Express
-- Prisma ORM
-- PostgreSQL database
-- JWT authentication
-- Redis for caching
-- WebSocket for real-time features
-
-### DevOps & Tools
-- Turborepo for monorepo management
-- ESLint & Prettier for code quality
-- Jest for testing
-- GitHub Actions for CI/CD
-- Docker for containerization
-
-## 🛠️ Setup Instructions
-
-1. **Clone the Repository**
+## Setup Instructions
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/nameker/nameker-miniapp.git
-   cd nameker
+   git clone <repository-url>
+   cd Nameker
    ```
 
-2. **Install Dependencies**
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Environment Setup**
-   - Copy `.env.example` to `.env` in each package
-   - Configure environment variables:
-     - Database connections
-     - API keys
-     - Telegram Bot token
-     - Payment gateway credentials
+3. **Set up environment variables**:
+   - Create a `.env` file in each directory (`backend`, `admin`, `miniapp`) based on the `.env.example` files.
 
-4. **Database Setup**
-   ```bash
-   cd packages/database
-   npx prisma migrate dev
-   ```
+## Running the Project
+- **Backend**:
+  ```bash
+  cd backend
+  npm run dev
+  ```
+- **Admin Panel**:
+  ```bash
+  cd admin
+  npm start
+  ```
+- **Mini App**:
+  ```bash
+  cd miniapp
+  npm run dev
+  ```
 
-5. **Start Development Servers**
-   ```bash
-   npm run dev
-   ```
+## Deployment Instructions
+- **Deploy on Railway**:
+  - Ensure all environment variables are set in Railway.
+  - Deploy each service independently using the Railway CLI or dashboard.
 
-## 🔐 Security
+## Environment Variables
+- **Backend**:
+  - `PORT`: Port for the server.
+  - `DATABASE_URL`: Database connection string.
+  - `JWT_SECRET`: Secret key for JWT.
+  - `ALLOWED_ORIGINS`: Comma-separated list of allowed origins.
 
-- JWT-based authentication
-- Secure payment processing
-- Rate limiting
-- Input validation
-- XSS protection
-- CORS configuration
-- Environment variable protection
+- **Admin**:
+  - `API_URL`: URL for the backend API.
 
-## 🌍 Internationalization
+- **Mini App**:
+  - `VITE_API_URL`: URL for the backend API.
+  - `VITE_TELEGRAM_BOT_TOKEN`: Telegram bot token.
 
-The platform supports multiple languages with easy addition of new ones:
-- English (default)
-- Persian (فارسی)
-- Extensible language system
+## Additional Resources
+- [Railway Documentation](https://railway.app/docs)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Vite Documentation](https://vitejs.dev/guide/)
 
-## 💳 Payment Integration
+## Technology Stack
 
-- TON Blockchain integration
-- Zarinpal payment gateway (for Iranian users)
-- Credit package system
-- Transaction history
-- Automatic credit management
+### Admin API (Backend)
+- Node.js
+- Express
+- TypeScript
+- MongoDB with Mongoose
+- JWT for authentication
+- OpenAI integration
 
-## 🎨 Themes
+### Admin Panel
+- React 18
+- TypeScript
+- React Router DOM
+- TailwindCSS for styling
 
-- Light theme
-- Dark theme
-- System preference detection
-- Customizable color schemes
+### Mini App
+- Vite
+- React 18
+- TypeScript
+- i18next for internationalization
 
-## 📱 Responsive Design
+## Development Progress
 
-- Mobile-first approach
-- Tablet optimization
-- Desktop support
-- Telegram Mini App UI guidelines compliance
+### Completed Tasks
+1. **Project Structure Setup**
+   - Initialized monorepo structure
+   - Configured TypeScript
+   - Set up build scripts
 
-## 🔄 State Management
+2. **Backend Development**
+   - Created Express API structure
+   - Implemented health check endpoint
+   - Set up MongoDB connection
+   - Added basic error handling
 
-- Centralized state with Zustand
-- Persistent storage
-- Real-time synchronization
-- Optimistic updates
+3. **Frontend Development**
+   - Created Vite React application
+   - Implemented routing
+   - Added internationalization support
+   - Set up production build configuration
 
-## 🧪 Testing
+4. **Deployment Configuration**
+   - Set up Railway deployment for all services
+   - Configured environment variables
+   - Added health check endpoints
+   - Implemented production-ready builds
 
-- Unit tests with Jest
-- Integration tests
-- E2E tests with Cypress
-- API endpoint testing
+### Current Status
+- All components are configured as standalone applications
+- Railway deployment is set up for all services
+- Basic infrastructure is in place
+- Ready for feature development
 
-## 📈 Performance
+### Pending Tasks
+1. **Admin Panel**
+   - Implement authentication flow
+   - Add main application features
+   - Complete UI/UX design
+   - Add error handling
 
-- Code splitting
-- Lazy loading
-- Image optimization
-- Caching strategies
-- Bundle size optimization
+2. **Mini App**
+   - Integrate with Telegram API
+   - Implement main features
+   - Optimize for performance
 
-## 📝 Contributing
+3. **Backend**
+   - Complete API endpoints
+   - Implement authentication middleware
+   - Add OpenAI integration
+   - Set up proper logging
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+## Contributing
+1. Create a feature branch
+2. Make your changes
+3. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Team
-
-- Frontend Developers
-- Backend Developers
-- UI/UX Designers
-- DevOps Engineers
-- QA Engineers
-
-## 📞 Support
-
-For support, please contact us through:
-- Telegram: @nameker_support
-- Email: support@nameker.com
-- GitHub Issues  
+## License
+[MIT License](LICENSE)
