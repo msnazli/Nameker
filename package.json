@@ -3,20 +3,25 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "shared",
+    "database",
+    "admin-api",
+    "miniapp"
   ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "start": "node packages/admin-api/dist/index.js",
+    "start": "node admin-api/dist/index.js",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "clean": "turbo run clean && rm -rf node_modules",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
+    "@types/express": "^4.17.17",
+    "@types/cors": "^2.8.13",
+    "@types/jsonwebtoken": "^9.0.1",
     "eslint": "^8.0.0",
     "prettier": "^3.0.0",
     "turbo": "^1.10.0",

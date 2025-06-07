@@ -1,36 +1,26 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "declaration": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@nameker/admin-panel/*": ["admin-panel/*"],
-      "@nameker/admin-api/*": ["admin-api/*"],
-      "@nameker/miniapp/*": ["miniapp/*"],
-      "@nameker/database/*": ["database/*"],
-      "@nameker/shared/*": ["shared/*"]
-    }
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
-  "exclude": ["node_modules", "dist", ".turbo"],
-  "include": [
-    "admin-panel/**/*.ts",
-    "admin-panel/**/*.tsx",
-    "admin-api/**/*.ts",
-    "miniapp/**/*.ts",
-    "miniapp/**/*.tsx",
-    "database/**/*.ts",
-    "shared/**/*.ts"
-  ]
+  "exclude": ["node_modules", "dist"]
 } 
