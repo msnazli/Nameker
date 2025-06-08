@@ -5,13 +5,13 @@
   "workspaces": [
     "shared",
     "database",
-    "admin-api",
+    "admin",
     "miniapp"
   ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "start": "node admin-api/dist/index.js",
+    "start": "node admin/dist/index.js",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "turbo run clean && rm -rf node_modules",
